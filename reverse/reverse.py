@@ -27,6 +27,9 @@ class LinkedList:
     
     self.head = node
 
+  def test(self):
+    print(self.head.value)
+
   def contains(self, value):
     if not self.head:
       return False
@@ -43,5 +46,47 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    left = None
+    curr_node = None
+    right = None
+    mover = self.head
+
+    while mover.next_node is not None:
+      if mover.next_node.next_node == None:
+        left = mover.value
+        curr_node = mover.next_node.value
+        print(left)
+      else: 
+        mover = mover.get_next()
+        return
+
+    # temp_list = []
+    # curr_node = self.head
+
+
+    # while curr_node is not None:
+    #   if curr_node == None:
+    #     curr_node = self.head
+    #   else: 
+    #     temp_list.insert(0,curr_node.value)
+    #     curr_node = curr_node.get_next()
+    #     print(temp_list)
+
+    # while curr_node is not None:
+    #   temp_node = self.head
+    #   for i in range(len(temp_list)):
+    #     print(i)
+    #     # temp_node.value = temp_list[i]
+    #     # temp_node = temp_node.get_next()
+
+
+
+
+
+list = LinkedList()
+list.add_to_head(1)
+list.add_to_head(2)
+list.add_to_head(3)
+list.add_to_head(4)
+list.reverse_list()
+list.test()
